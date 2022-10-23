@@ -13,6 +13,7 @@ public class Doc {
         sb1.replace(19,20,"*");
         sb1.replace(21,22,"*");
         System.out.println(sb1);
+
         char[]a1=a.toCharArray();
         for (int i=0; i<a.length();i++){
             if (a1[i]>='A'&& a1[i]<='z')
@@ -59,7 +60,24 @@ public class Doc {
             System.out.println("да");}
         else System.out.println("Нет");
     }
-    public static void dop2(String b){
+    public static void dop2(String c) {
+        System.out.println("--Найти самое короткое слово в строке и вывести его на экран.\n" +
+                            "--Найти самое длинное слово в строке и вывести его на экран.");
+        String[]c1=c.split(" ");
+        String max=" ";
+        String min=c1[1];
+        for (String d : c1){
+            if (d.length()>max.length())
+                max=d;
+        }
+        for (String d: c1){
+            if (d.length()<min.length())
+                min=d;
+        }
+        System.out.println("Самое длинное слово: "+max);
+        System.out.println("Самое короткое слово: "+min);
+    }
+    public static void dop3(String b){
         System.out.println("--Вывести на консоль новую строку, которой задублирована каждая буква из начальной строки:");
         char[]b1=b.toCharArray();
         for (int i=0; i<b.length();i++){
@@ -67,5 +85,4 @@ public class Doc {
             System.out.print(b2.repeat(2));
         }
     }
-
 }

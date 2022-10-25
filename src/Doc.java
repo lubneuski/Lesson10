@@ -62,17 +62,21 @@ public class Doc {
     }
     public static void dop2(String c) {
         System.out.println("--Найти самое короткое слово в строке и вывести его на экран.\n" +
-                            "--Найти самое длинное слово в строке и вывести его на экран.");
-        String[]c1=c.split(" ");
-        String max=" ";
-        String min=c1[1];
-        for (String d : c1){
-            if (d.length()>max.length())
-                max=d;
-        }
-        for (String d: c1){
-            if (d.length()<min.length())
-                min=d;
+                "--Найти самое длинное слово в строке и вывести его на экран.");
+        String[] c1 = c.split(" ");
+        String max = "";
+        String min = "";
+        int minS=c.length();
+        int maxS=0;
+        for (String d : c1) {
+            if (d.length() > maxS) {
+                max = d;
+                maxS=d.length();
+            }
+            if (d.length() <minS)  {
+                min = d;
+                minS=d.length();
+            }
         }
         System.out.println("Самое длинное слово: "+max);
         System.out.println("Самое короткое слово: "+min);
